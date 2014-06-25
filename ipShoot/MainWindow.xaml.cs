@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 using ipShoot.Shoots;
+using System.Windows.Media;
+
 
 namespace ipShoot
 {
@@ -53,6 +55,47 @@ namespace ipShoot
             {
                 txbIPNames.Text = txbIPNames.Text + ip.AddressFamily + ": " + ip.ToString() + Environment.NewLine;
             } 
+        }
+
+        private void cbConsoleMode_Checked(object sender, RoutedEventArgs e)
+        {
+            if (cbConsoleMode.IsChecked.Value)
+            {
+                // ====== CONFIG TAB =================
+                configTab.Background = Brushes.Black;
+                cbConsoleMode.Foreground = Brushes.LimeGreen;
+
+                // ====== LOCAL TAB =================
+                localTab.Background = Brushes.Black;
+                txbMachineName.Foreground = Brushes.LimeGreen;
+                txbMachineNameLiteral.Foreground = Brushes.LimeGreen;
+                txbIPNames.Foreground = Brushes.LimeGreen;
+                borderInfo.BorderBrush = Brushes.LimeGreen;
+
+                // ====== REMOTE TAB ================
+                remoteTab.Background = Brushes.Black;
+                txtHostName.Foreground = Brushes.LimeGreen;
+                rtbLocationData.Foreground = Brushes.LimeGreen;
+                txbIpRemote.Foreground = Brushes.LimeGreen;
+            }
+            else
+            {
+                configTab.Background = Brushes.White;
+                cbConsoleMode.Foreground = Brushes.Black;
+
+                // ====== LOCAL TAB =================
+                localTab.Background = Brushes.White;
+                txbMachineName.Foreground = Brushes.Black;
+                txbMachineNameLiteral.Foreground = Brushes.Black;
+                txbIPNames.Foreground = Brushes.Black;
+                borderInfo.BorderBrush = Brushes.Black;
+
+                // ====== REMOTE TAB ================
+                remoteTab.Background = Brushes.White;
+                txtHostName.Foreground = Brushes.Black;
+                rtbLocationData.Foreground = Brushes.Black;
+                txbIpRemote.Foreground = Brushes.Black;
+            }
         }
     }
 }

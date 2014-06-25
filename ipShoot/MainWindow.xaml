@@ -1,29 +1,38 @@
 ﻿<Window x:Class="ipShoot.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="814" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="MainWindow" Height="350" Width="814" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" >
     <TabControl>
-        <TabItem Header="Local">
-            <Grid>
+        <TabItem Header="Local" Name="tbLocal">
+            <Grid Name="localTab">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Name="txbMachineNameLiteral" Margin="10, 20,0 ,0" FontSize="15">Machine Name: 
+                <TextBlock Grid.Column="0" Name="txbMachineNameLiteral" Margin="10, 20,0 ,0" FontSize="15" HorizontalAlignment="Center">Machine Name: 
                     <TextBlock Grid.Column="0" Name="txbMachineName" FontSize="15" FontWeight="Bold"></TextBlock>
                 </TextBlock>
-                <TextBlock Grid.Column="0" Name="txbIPNames" Margin="10,45,0,0" FontSize="15"></TextBlock>
+                <Border Grid.Column="0" BorderThickness="1" BorderBrush="Black" Margin="100,69,100,9" Name="borderInfo">
+                    <TextBlock Grid.Column="0" Name="txbIPNames" Margin="10,70,0,0" FontSize="15" HorizontalAlignment="Center"></TextBlock>
+                </Border>
             </Grid>
         </TabItem>
-        <TabItem Header="Remote">
-            <Grid>
+        <TabItem Header="Remote" Name="tbRemote">
+            <Grid Name="remoteTab">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
-
                 </Grid.ColumnDefinitions>
                 <TextBox Width="175" Height="25" Name="txtHostName" TextAlignment="Center" Margin="0,100,0,0" HorizontalAlignment="Center"></TextBox>
                 <Button Grid.Column="0" Width="185" Height="50" Name="btnRemoteShoot" Click="btnRemoteShoot_Click" HorizontalAlignment="Center">Shoot!</Button>
                 <TextBlock Grid.Column="0" Name="txbIpRemote" Margin="500,20,10,200"></TextBlock>
                 <RichTextBox Grid.Column="0" Margin="500,130,10,10" Name="rtbLocationData" Visibility="Hidden" HorizontalAlignment="Right" IsEnabled="False" FontWeight="Bold"></RichTextBox>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Config" Name="tbConfig">
+            <Grid Name="configTab">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <CheckBox Name="cbConsoleMode" Margin="10,10,650,255" Checked="cbConsoleMode_Checked">Console View</CheckBox>
             </Grid>
         </TabItem>
     </TabControl>

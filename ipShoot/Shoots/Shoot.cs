@@ -60,6 +60,11 @@ namespace ipShoot.Shoots
             }            
         }
 
+        /// <summary>
+        /// Get Location information
+        /// </summary>
+        /// <param name="ipf"></param>
+        /// <returns></returns>
         public static FlowDocument GetLocationData(string ipf)
         {
             XmlDocument doc = new XmlDocument();
