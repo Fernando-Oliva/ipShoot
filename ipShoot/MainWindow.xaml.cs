@@ -97,5 +97,13 @@ namespace ipShoot
                 txbIpRemote.Foreground = Brushes.Black;
             }
         }
+
+        private void TabItem_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (var sysInfo in Shoot.GetSystemInformation())
+            {
+                txbSysInfo.Text = txbSysInfo.Text + sysInfo + Environment.NewLine;
+            } 
+        }
     }
 }

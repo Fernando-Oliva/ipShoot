@@ -27,6 +27,18 @@
                 <RichTextBox Grid.Column="0" Margin="500,130,10,10" Name="rtbLocationData" Visibility="Hidden" HorizontalAlignment="Right" IsEnabled="False" FontWeight="Bold"></RichTextBox>
             </Grid>
         </TabItem>
+        <TabItem Header="System" Loaded="TabItem_Loaded">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SYSTEM INFORMATION</TextBlock>
+                <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black" Margin="100,40,100,9" Name="borderSysInfo">
+                    <TextBlock Grid.Row="1" Name="txbSysInfo" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Border>
+            </Grid>
+        </TabItem>
         <TabItem Header="Config" Name="tbConfig">
             <Grid Name="configTab">
                 <Grid.ColumnDefinitions>

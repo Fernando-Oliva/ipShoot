@@ -95,5 +95,62 @@ namespace ipShoot.Shoots
 
             return myFlowDoc;
         }
+
+        public enum OS { _2000, XP, Vista, _7, _8 }
+
+        public static OS GetOS()
+        {
+            var version = Environment.OSVersion.Version;
+            switch (version.Major)
+            {
+                case 5:
+                    switch (version.Minor)
+                    {
+                        case 0:
+                            return OS._2000;
+                        case 1:
+                            return OS.XP;
+                        case 2:
+                            return OS.XP; //could also be Server 2003, Server 2003 R2
+                    }
+                    break;
+                case 6:
+                    switch (version.Minor)
+                    {
+                        case 0:
+                            return OS.Vista; //could also be Server 2008
+                        case 1:
+                            return OS._7; //could also be Server 2008 R2
+                        case 2:
+                            return OS._8; //could also be Server 20012, Server 2012 R2
+                    }
+                    break;
+            }
+
+            throw new Exception("Strange OS");
+        }
+
+        /// <summary>
+        /// Get system information
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetSystemInformation()
+        {
+            List<string> sysInfo = new List<string>();
+
+            string OSName = GetOS().ToString();
+
+            sysInfo.Add("MACHINE NAME: " + Environment.MachineName);
+            sysInfo.Add("USER NAME: " + Environment.UserName);
+            sysInfo.Add("VERISON: " + Environment.Version.ToString());
+            sysInfo.Add("USER DOMAIN NAME: " + Environment.UserDomainName);
+            sysInfo.Add("PROCESSOR NUMBER: " + Environment.ProcessorCount.ToString());
+            sysInfo.Add("OS: Windows" + OSName);
+            sysInfo.Add("OS VERSION: " + Environment.OSVersion.VersionString);
+            sysInfo.Add("OS VERSION PLATFORM: " + Environment.OSVersion.Platform.ToString());
+            sysInfo.Add("SERVICE PACK: " + Environment.OSVersion.ServicePack);            
+
+            return sysInfo;
+        }
     }
 }
