@@ -18,12 +18,12 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+
                 </Grid.ColumnDefinitions>
-                <TextBox Width="175" Height="25" Name="txtHostName" TextAlignment="Center" Margin="0,100,0,0"></TextBox>
-                <Button Grid.Column="0" Width="185" Height="50" Name="btnRemoteShoot" Click="btnRemoteShoot_Click">Shoot!</Button>
-                <TextBlock Grid.Column="1" Name="txbIpRemote" Margin="10,20,0,0"></TextBlock>
-                <RichTextBox Grid.Column="1" Margin="10,130,10,10" Name="rtbLocationData" Visibility="Hidden"></RichTextBox>
+                <TextBox Width="175" Height="25" Name="txtHostName" TextAlignment="Center" Margin="0,100,0,0" HorizontalAlignment="Center"></TextBox>
+                <Button Grid.Column="0" Width="185" Height="50" Name="btnRemoteShoot" Click="btnRemoteShoot_Click" HorizontalAlignment="Center">Shoot!</Button>
+                <TextBlock Grid.Column="0" Name="txbIpRemote" Margin="500,20,10,200"></TextBlock>
+                <RichTextBox Grid.Column="0" Margin="500,130,10,10" Name="rtbLocationData" Visibility="Hidden" HorizontalAlignment="Right"></RichTextBox>
             </Grid>
         </TabItem>
     </TabControl>
