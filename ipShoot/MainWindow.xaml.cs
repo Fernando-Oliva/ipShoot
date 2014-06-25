@@ -30,17 +30,14 @@ namespace ipShoot
 
                 // Add initial content to the RichTextBox.
                 rtbLocationData.Document = Shoot.GetLocationData(ipf);
-
                 rtbLocationData.Visibility = System.Windows.Visibility.Visible;
 
                 btnRemoteShoot.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
-
                 btnRemoteShoot.Margin = new Thickness(100, 0, 0, 0);
 
                 txtHostName.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                 txtHostName.VerticalAlignment = System.Windows.VerticalAlignment.Bottom;
-
-                txtHostName.Margin = new Thickness(100, 0, 0, 70);
+                txtHostName.Margin = new Thickness(107, 0, 0, 70);
             }
             else
             {
