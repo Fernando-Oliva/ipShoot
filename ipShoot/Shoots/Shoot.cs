@@ -5,6 +5,7 @@ using System.Net;
 using System.Xml;
 using System.Text.RegularExpressions;
 using System.Windows.Documents;
+using System.Management;
 
 namespace ipShoot.Shoots
 {
@@ -148,7 +149,15 @@ namespace ipShoot.Shoots
             sysInfo.Add("OS: Windows" + OSName);
             sysInfo.Add("OS VERSION: " + Environment.OSVersion.VersionString);
             sysInfo.Add("OS VERSION PLATFORM: " + Environment.OSVersion.Platform.ToString());
-            sysInfo.Add("SERVICE PACK: " + Environment.OSVersion.ServicePack);            
+            sysInfo.Add("SERVICE PACK: " + Environment.OSVersion.ServicePack);
+
+            ManagementClass mgt = new ManagementClass("Win32_Processor");
+            ManagementObjectCollection procs = mgt.GetInstances();
+
+            foreach (var item in procs)
+            {
+                sysInfo.Add("PROCESSOR: " + item.Properties["Name"].Value.ToString());                
+            }
 
             return sysInfo;
         }

@@ -59,43 +59,29 @@ namespace ipShoot
 
         private void cbConsoleMode_Checked(object sender, RoutedEventArgs e)
         {
-            if (cbConsoleMode.IsChecked.Value)
-            {
-                // ====== CONFIG TAB =================
-                configTab.Background = Brushes.Black;
-                cbConsoleMode.Foreground = Brushes.LimeGreen;
+            // ====== CONFIG TAB =================
+            configTab.Background = Brushes.Black;
+            cbConsoleMode.Foreground = Brushes.LimeGreen;
 
-                // ====== LOCAL TAB =================
-                localTab.Background = Brushes.Black;
-                txbMachineName.Foreground = Brushes.LimeGreen;
-                txbMachineNameLiteral.Foreground = Brushes.LimeGreen;
-                txbIPNames.Foreground = Brushes.LimeGreen;
-                borderInfo.BorderBrush = Brushes.LimeGreen;
+            // ====== LOCAL TAB =================
+            localTab.Background = Brushes.Black;
+            txbMachineName.Foreground = Brushes.LimeGreen;
+            txbMachineNameLiteral.Foreground = Brushes.LimeGreen;
+            txbIPNames.Foreground = Brushes.LimeGreen;
+            borderInfo.BorderBrush = Brushes.LimeGreen;
 
-                // ====== REMOTE TAB ================
-                remoteTab.Background = Brushes.Black;
-                txtHostName.Foreground = Brushes.LimeGreen;
-                rtbLocationData.Foreground = Brushes.LimeGreen;
-                txbIpRemote.Foreground = Brushes.LimeGreen;
-            }
-            else
-            {
-                configTab.Background = Brushes.White;
-                cbConsoleMode.Foreground = Brushes.Black;
+            // ====== REMOTE TAB ================
+            remoteTab.Background = Brushes.Black;
+            txtHostName.Foreground = Brushes.LimeGreen;
+            txtHostName.Background = Brushes.Black;
+            txtHostName.BorderBrush = Brushes.LimeGreen;
+            rtbLocationData.Foreground = Brushes.LimeGreen;
+            txbIpRemote.Foreground = Brushes.LimeGreen;
 
-                // ====== LOCAL TAB =================
-                localTab.Background = Brushes.White;
-                txbMachineName.Foreground = Brushes.Black;
-                txbMachineNameLiteral.Foreground = Brushes.Black;
-                txbIPNames.Foreground = Brushes.Black;
-                borderInfo.BorderBrush = Brushes.Black;
-
-                // ====== REMOTE TAB ================
-                remoteTab.Background = Brushes.White;
-                txtHostName.Foreground = Brushes.Black;
-                rtbLocationData.Foreground = Brushes.Black;
-                txbIpRemote.Foreground = Brushes.Black;
-            }
+            // ======= SYSINFO TAB ==============
+            sysInfoTab.Background = Brushes.Black;
+            txbSysInfo.Foreground = Brushes.LimeGreen;
+            txbSysInfoLiteral.Foreground = Brushes.LimeGreen;
         }
 
         private void TabItem_Loaded(object sender, RoutedEventArgs e)
@@ -104,6 +90,32 @@ namespace ipShoot
             {
                 txbSysInfo.Text = txbSysInfo.Text + sysInfo + Environment.NewLine;
             } 
+        }
+
+        private void cbConsoleMode_Unchecked(object sender, RoutedEventArgs e)
+        {
+            configTab.Background = Brushes.White;
+            cbConsoleMode.Foreground = Brushes.Black;
+
+            // ====== LOCAL TAB =================
+            localTab.Background = Brushes.White;
+            txbMachineName.Foreground = Brushes.Black;
+            txbMachineNameLiteral.Foreground = Brushes.Black;
+            txbIPNames.Foreground = Brushes.Black;
+            borderInfo.BorderBrush = Brushes.Black;
+
+            // ====== REMOTE TAB ================
+            remoteTab.Background = Brushes.White;
+            txtHostName.Foreground = Brushes.Black;
+            txtHostName.Background = Brushes.White;
+            txtHostName.BorderBrush = Brushes.Black;
+            rtbLocationData.Foreground = Brushes.Black;
+            txbIpRemote.Foreground = Brushes.Black;
+
+            // ======= SYSINFO TAB ==============
+            sysInfoTab.Background = Brushes.White;
+            txbSysInfo.Foreground = Brushes.Black;
+            txbSysInfoLiteral.Foreground = Brushes.Black;
         }
     }
 }
